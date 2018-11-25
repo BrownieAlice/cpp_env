@@ -1,4 +1,4 @@
-FROM gcc:latest
+FROM gcc
 RUN git clone --recursive https://github.com/boostorg/boost.git && \
     cd boost && \
     sh bootstrap.sh && \
