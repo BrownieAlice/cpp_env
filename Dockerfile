@@ -9,4 +9,8 @@ RUN git clone --recursive https://github.com/boostorg/boost.git && \
     ./bootstrap &&\
     make -j5 &&\
     make install &&\
-    cd ../ && rm -r cmake
+    cd ../ && rm -r cmake &&\
+    apt update && apt install -y --no-install-recommends re2c &&\
+    git clone https://github.com/ninja-build/ninja.git &&\
+    cd ninja && ./configure.py --bootstrap && mv ninja /usr/bin/ninja &&\
+    cd ../ && rm -r ninja
